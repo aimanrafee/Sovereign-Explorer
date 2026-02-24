@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>SOVEREIGN EXPLORER | ES-RFS Visualizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="visualizer.css">
+</head>
+<body class="bg-[#050505] text-emerald-500 font-mono overflow-x-hidden">
+
+    <nav class="border-b border-emerald-500/20 p-6 flex justify-between items-center backdrop-blur-md sticky top-0 z-50">
+        <div>
+            <h1 class="text-lg font-bold tracking-[0.4em] uppercase">Sovereign Explorer</h1>
+            <p class="text-[9px] text-emerald-800 uppercase">Protokol: ES-RFS SHA-512</p>
+        </div>
+        <div class="text-right">
+            <div class="text-[9px] text-gray-500">Node Ubuntu IP</div>
+            <div id="node-ip-display" class="text-xs font-bold text-white">192.168.8.102</div>
+        </div>
+    </nav>
+
+    <main class="p-6 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-emerald-500/5 border border-emerald-500/20 p-6 rounded-lg">
+                    <h3 class="text-[10px] font-bold mb-4 uppercase tracking-widest text-white">Status Rangkaian</h3>
+                    <div class="flex justify-between text-[10px] mb-2">
+                        <span>Status:</span>
+                        <span class="text-white">ONLINE</span>
+                    </div>
+                    <div class="flex justify-between text-[10px]">
+                        <span>Blok Terkini:</span>
+                        <span id="latest-block-height" class="text-white">#004821</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2">
+                <h3 class="text-[10px] font-bold mb-6 uppercase tracking-widest text-white flex items-center gap-2">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
+                    Live Transaction Stream
+                </h3>
+                
+                <div id="explorer-list" class="space-y-4">
+                    <div class="border border-white/5 bg-white/[0.02] p-4 rounded-lg hover:border-emerald-500/40 transition-all cursor-pointer group">
+                        <div class="flex justify-between mb-3 text-[9px]">
+                            <span class="text-emerald-400 font-bold tracking-widest">TRANSFER SUCCESS</span>
+                            <span class="text-gray-600">2026-02-24 08:20:11</span>
+                        </div>
+                        <div class="text-[11px] text-white mb-2 break-all font-mono">
+                            HASH: <span class="group-hover:text-emerald-400">8f3e2...d91c2a0b45f...</span>
+                        </div>
+                        <div class="flex gap-4 text-[9px] text-gray-500 uppercase">
+                            <span>Dari: VRT_01...</span>
+                            <span>Ke: VRT_99...</span>
+                            <span class="text-emerald-500 font-bold">+500.00 VRT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="explorer-engine.js"></script>
+</body>
+</html>
