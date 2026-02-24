@@ -1,0 +1,40 @@
+:root {
+    --void-black: #020202;
+    --emerald-glow: #10b981;
+    --cyber-blue: #3b82f6;
+    --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--void-black);
+    background-image: radial-gradient(circle at 50% 50%, #0a1a12 0%, #020202 100%);
+    min-height: 100vh;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+.hash-text {
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(90deg, var(--emerald-glow), var(--cyber-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.2));
+}
+
+.status-pulse {
+    box-shadow: 0 0 15px var(--emerald-glow);
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--emerald-glow); border-radius: 10px; }
